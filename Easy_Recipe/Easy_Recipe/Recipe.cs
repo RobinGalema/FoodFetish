@@ -11,16 +11,15 @@ namespace Easy_Recipe
         private string name;
         private string description;
         private int time;
-        List<ingredient> ingredients;
-        List<catagory> catagories;
+        List<Ingredient> ingredients;
+        List<Catagory> catagories;
 
-        public Recipe(string name, string description, int time, List<ingredient> ingredients, List<catagory> catagories)
+        public Recipe(string name, string description, int time, List<Ingredient> ingredients, List<Catagory> catagories)
         {
             this.name = name;
             this.description = description;
             this.time = time;
-            ingredients = new List<ingredient>();
-            catagories = new List<catagory>();
+            ingredients = new List<Ingredient>();
+            catagories = new List<Catagory>();
         }
-    }
 }
