@@ -15,6 +15,7 @@ namespace Easy_Recipe
         public Form1()
         {
             InitializeComponent();
+            
         }
     }
 }
