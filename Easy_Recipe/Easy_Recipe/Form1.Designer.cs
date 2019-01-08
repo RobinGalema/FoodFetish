@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Home = new System.Windows.Forms.TabPage();
+            this.labelRecentHeader = new System.Windows.Forms.Label();
             this.labelSuggestSalad = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.labelSuggestDesert = new System.Windows.Forms.Label();
@@ -58,20 +59,28 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelEasyRecipe = new System.Windows.Forms.Label();
             this.Recipe = new System.Windows.Forms.TabPage();
-            this.labelRecentHeader = new System.Windows.Forms.Label();
-            this.labelRecipeTitle = new System.Windows.Forms.Label();
-            this.listBoxIngredients = new System.Windows.Forms.ListBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labelRecipePreperation = new System.Windows.Forms.Label();
             this.Search = new System.Windows.Forms.TabPage();
-            this.textBoxSearch = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.listBoxSearchResults = new System.Windows.Forms.ListBox();
             this.Favorieten = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.buttonBackRecipe = new System.Windows.Forms.Button();
+            this.labelRecipePreperation = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.listBoxIngredients = new System.Windows.Forms.ListBox();
+            this.labelRecipeTitle = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.buttonBackSearch = new System.Windows.Forms.Button();
+            this.listBoxSearchResults = new System.Windows.Forms.ListBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.buttonBackFavourites = new System.Windows.Forms.Button();
             this.listBoxFavourites = new System.Windows.Forms.ListBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSuggestDesert)).BeginInit();
@@ -85,9 +94,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRecent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Recipe.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.Search.SuspendLayout();
             this.Favorieten.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -138,6 +150,17 @@
             this.Home.Size = new System.Drawing.Size(504, 822);
             this.Home.TabIndex = 0;
             this.Home.Text = "Home";
+            // 
+            // labelRecentHeader
+            // 
+            this.labelRecentHeader.AutoSize = true;
+            this.labelRecentHeader.Font = new System.Drawing.Font("Franklin Gothic Heavy", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecentHeader.ForeColor = System.Drawing.Color.White;
+            this.labelRecentHeader.Location = new System.Drawing.Point(13, 322);
+            this.labelRecentHeader.Name = "labelRecentHeader";
+            this.labelRecentHeader.Size = new System.Drawing.Size(73, 24);
+            this.labelRecentHeader.TabIndex = 58;
+            this.labelRecentHeader.Text = "Recent";
             // 
             // labelSuggestSalad
             // 
@@ -431,12 +454,15 @@
             // Recipe
             // 
             this.Recipe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(181)))), ((int)(((byte)(74)))));
+            this.Recipe.Controls.Add(this.label11);
+            this.Recipe.Controls.Add(this.buttonBackRecipe);
             this.Recipe.Controls.Add(this.labelRecipePreperation);
             this.Recipe.Controls.Add(this.label4);
             this.Recipe.Controls.Add(this.label2);
-            this.Recipe.Controls.Add(this.pictureBox3);
+            this.Recipe.Controls.Add(this.pictureBox4);
             this.Recipe.Controls.Add(this.listBoxIngredients);
             this.Recipe.Controls.Add(this.labelRecipeTitle);
+            this.Recipe.Controls.Add(this.pictureBox3);
             this.Recipe.Location = new System.Drawing.Point(4, 25);
             this.Recipe.Name = "Recipe";
             this.Recipe.Padding = new System.Windows.Forms.Padding(3);
@@ -444,92 +470,15 @@
             this.Recipe.TabIndex = 1;
             this.Recipe.Text = "Recipe";
             // 
-            // labelRecentHeader
-            // 
-            this.labelRecentHeader.AutoSize = true;
-            this.labelRecentHeader.Font = new System.Drawing.Font("Franklin Gothic Heavy", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRecentHeader.ForeColor = System.Drawing.Color.White;
-            this.labelRecentHeader.Location = new System.Drawing.Point(13, 322);
-            this.labelRecentHeader.Name = "labelRecentHeader";
-            this.labelRecentHeader.Size = new System.Drawing.Size(73, 24);
-            this.labelRecentHeader.TabIndex = 58;
-            this.labelRecentHeader.Text = "Recent";
-            // 
-            // labelRecipeTitle
-            // 
-            this.labelRecipeTitle.AutoSize = true;
-            this.labelRecipeTitle.Font = new System.Drawing.Font("Franklin Gothic Heavy", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRecipeTitle.ForeColor = System.Drawing.Color.White;
-            this.labelRecipeTitle.Location = new System.Drawing.Point(13, 30);
-            this.labelRecipeTitle.Name = "labelRecipeTitle";
-            this.labelRecipeTitle.Size = new System.Drawing.Size(96, 44);
-            this.labelRecipeTitle.TabIndex = 0;
-            this.labelRecipeTitle.Text = "Title";
-            // 
-            // listBoxIngredients
-            // 
-            this.listBoxIngredients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(181)))), ((int)(((byte)(74)))));
-            this.listBoxIngredients.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBoxIngredients.FormattingEnabled = true;
-            this.listBoxIngredients.ItemHeight = 16;
-            this.listBoxIngredients.Items.AddRange(new object[] {
-            "Test",
-            "Test2",
-            "Test3"});
-            this.listBoxIngredients.Location = new System.Drawing.Point(21, 115);
-            this.listBoxIngredients.Name = "listBoxIngredients";
-            this.listBoxIngredients.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listBoxIngredients.Size = new System.Drawing.Size(143, 274);
-            this.listBoxIngredients.TabIndex = 1;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(225, 127);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(253, 248);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Franklin Gothic Heavy", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(17, 88);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 24);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Ingrediënten:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Franklin Gothic Heavy", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(17, 426);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 24);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Bereidingswijze:";
-            // 
-            // labelRecipePreperation
-            // 
-            this.labelRecipePreperation.AutoSize = true;
-            this.labelRecipePreperation.Location = new System.Drawing.Point(21, 454);
-            this.labelRecipePreperation.Name = "labelRecipePreperation";
-            this.labelRecipePreperation.Size = new System.Drawing.Size(109, 17);
-            this.labelRecipePreperation.TabIndex = 6;
-            this.labelRecipePreperation.Text = "Bereidingswijze,";
-            // 
             // Search
             // 
             this.Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(181)))), ((int)(((byte)(74)))));
+            this.Search.Controls.Add(this.buttonBackSearch);
             this.Search.Controls.Add(this.listBoxSearchResults);
             this.Search.Controls.Add(this.label9);
             this.Search.Controls.Add(this.textBoxSearch);
+            this.Search.Controls.Add(this.pictureBox5);
+            this.Search.Controls.Add(this.label12);
             this.Search.Location = new System.Drawing.Point(4, 25);
             this.Search.Name = "Search";
             this.Search.Padding = new System.Windows.Forms.Padding(3);
@@ -537,47 +486,14 @@
             this.Search.TabIndex = 2;
             this.Search.Text = "Search";
             // 
-            // textBoxSearch
-            // 
-            this.textBoxSearch.Location = new System.Drawing.Point(6, 68);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(492, 22);
-            this.textBoxSearch.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Franklin Gothic Heavy", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(6, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(153, 44);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Search:";
-            // 
-            // listBoxSearchResults
-            // 
-            this.listBoxSearchResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(181)))), ((int)(((byte)(74)))));
-            this.listBoxSearchResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBoxSearchResults.FormattingEnabled = true;
-            this.listBoxSearchResults.ItemHeight = 16;
-            this.listBoxSearchResults.Items.AddRange(new object[] {
-            "Dummy data",
-            "Dummy data1",
-            "Dummy data2",
-            "Dummy data3",
-            "Dummy data4",
-            "Dummy data5"});
-            this.listBoxSearchResults.Location = new System.Drawing.Point(7, 97);
-            this.listBoxSearchResults.Name = "listBoxSearchResults";
-            this.listBoxSearchResults.Size = new System.Drawing.Size(491, 706);
-            this.listBoxSearchResults.TabIndex = 2;
-            // 
             // Favorieten
             // 
             this.Favorieten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(181)))), ((int)(((byte)(74)))));
+            this.Favorieten.Controls.Add(this.buttonBackFavourites);
             this.Favorieten.Controls.Add(this.listBoxFavourites);
             this.Favorieten.Controls.Add(this.label10);
+            this.Favorieten.Controls.Add(this.pictureBox6);
+            this.Favorieten.Controls.Add(this.label13);
             this.Favorieten.Location = new System.Drawing.Point(4, 25);
             this.Favorieten.Name = "Favorieten";
             this.Favorieten.Padding = new System.Windows.Forms.Padding(3);
@@ -585,34 +501,226 @@
             this.Favorieten.TabIndex = 3;
             this.Favorieten.Text = "Favorieten";
             // 
-            // label10
+            // pictureBox3
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Franklin Gothic Heavy", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(14, 23);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(210, 44);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Favorieten";
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
+            this.pictureBox3.Location = new System.Drawing.Point(-4, 83);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(512, 752);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Simplisicky Fill", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(113, 3);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(268, 77);
+            this.label11.TabIndex = 40;
+            this.label11.Text = "Easy Recipe";
+            // 
+            // buttonBackRecipe
+            // 
+            this.buttonBackRecipe.Location = new System.Drawing.Point(20, 100);
+            this.buttonBackRecipe.Name = "buttonBackRecipe";
+            this.buttonBackRecipe.Size = new System.Drawing.Size(87, 49);
+            this.buttonBackRecipe.TabIndex = 39;
+            this.buttonBackRecipe.Text = "Back";
+            this.buttonBackRecipe.UseVisualStyleBackColor = true;
+            this.buttonBackRecipe.Click += new System.EventHandler(this.buttonBackRecipe_Click);
+            // 
+            // labelRecipePreperation
+            // 
+            this.labelRecipePreperation.AutoSize = true;
+            this.labelRecipePreperation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
+            this.labelRecipePreperation.Location = new System.Drawing.Point(16, 568);
+            this.labelRecipePreperation.Name = "labelRecipePreperation";
+            this.labelRecipePreperation.Size = new System.Drawing.Size(109, 17);
+            this.labelRecipePreperation.TabIndex = 38;
+            this.labelRecipePreperation.Text = "Bereidingswijze,";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
+            this.label4.Font = new System.Drawing.Font("Franklin Gothic Heavy", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(15, 544);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(154, 24);
+            this.label4.TabIndex = 37;
+            this.label4.Text = "Bereidingswijze:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
+            this.label2.Font = new System.Drawing.Font("Franklin Gothic Heavy", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(15, 209);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(128, 24);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Ingrediënten:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(222, 236);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(253, 248);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 35;
+            this.pictureBox4.TabStop = false;
+            // 
+            // listBoxIngredients
+            // 
+            this.listBoxIngredients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
+            this.listBoxIngredients.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBoxIngredients.FormattingEnabled = true;
+            this.listBoxIngredients.ItemHeight = 16;
+            this.listBoxIngredients.Items.AddRange(new object[] {
+            "Test",
+            "Test2",
+            "Test3"});
+            this.listBoxIngredients.Location = new System.Drawing.Point(19, 236);
+            this.listBoxIngredients.Name = "listBoxIngredients";
+            this.listBoxIngredients.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.listBoxIngredients.Size = new System.Drawing.Size(143, 274);
+            this.listBoxIngredients.TabIndex = 34;
+            this.listBoxIngredients.SelectedIndexChanged += new System.EventHandler(this.listBoxIngredients_SelectedIndexChanged);
+            // 
+            // labelRecipeTitle
+            // 
+            this.labelRecipeTitle.AutoSize = true;
+            this.labelRecipeTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
+            this.labelRecipeTitle.Font = new System.Drawing.Font("Franklin Gothic Heavy", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecipeTitle.ForeColor = System.Drawing.Color.White;
+            this.labelRecipeTitle.Location = new System.Drawing.Point(11, 165);
+            this.labelRecipeTitle.Name = "labelRecipeTitle";
+            this.labelRecipeTitle.Size = new System.Drawing.Size(96, 44);
+            this.labelRecipeTitle.TabIndex = 33;
+            this.labelRecipeTitle.Text = "Title";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Simplisicky Fill", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(100, 6);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(268, 77);
+            this.label12.TabIndex = 41;
+            this.label12.Text = "Easy Recipe";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
+            this.pictureBox5.Location = new System.Drawing.Point(-4, 86);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(512, 754);
+            this.pictureBox5.TabIndex = 42;
+            this.pictureBox5.TabStop = false;
+            // 
+            // buttonBackSearch
+            // 
+            this.buttonBackSearch.Location = new System.Drawing.Point(12, 94);
+            this.buttonBackSearch.Name = "buttonBackSearch";
+            this.buttonBackSearch.Size = new System.Drawing.Size(87, 49);
+            this.buttonBackSearch.TabIndex = 46;
+            this.buttonBackSearch.Text = "Back";
+            this.buttonBackSearch.UseVisualStyleBackColor = true;
+            this.buttonBackSearch.Click += new System.EventHandler(this.buttonBackSearch_Click);
+            // 
+            // listBoxSearchResults
+            // 
+            this.listBoxSearchResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
+            this.listBoxSearchResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBoxSearchResults.FormattingEnabled = true;
+            this.listBoxSearchResults.ItemHeight = 16;
+            this.listBoxSearchResults.Location = new System.Drawing.Point(6, 248);
+            this.listBoxSearchResults.Name = "listBoxSearchResults";
+            this.listBoxSearchResults.Size = new System.Drawing.Size(491, 562);
+            this.listBoxSearchResults.TabIndex = 45;
+            this.listBoxSearchResults.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBoxSearchResults_DrawItem);
+            this.listBoxSearchResults.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.listBoxSearchResults_MeasureItem);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
+            this.label9.Font = new System.Drawing.Font("Franklin Gothic Heavy", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(5, 161);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(153, 44);
+            this.label9.TabIndex = 44;
+            this.label9.Text = "Search:";
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(6, 208);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(492, 22);
+            this.textBoxSearch.TabIndex = 43;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Simplisicky Fill", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(109, 5);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(268, 77);
+            this.label13.TabIndex = 42;
+            this.label13.Text = "Easy Recipe";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
+            this.pictureBox6.Location = new System.Drawing.Point(-4, 85);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(512, 741);
+            this.pictureBox6.TabIndex = 43;
+            this.pictureBox6.TabStop = false;
+            // 
+            // buttonBackFavourites
+            // 
+            this.buttonBackFavourites.Location = new System.Drawing.Point(13, 94);
+            this.buttonBackFavourites.Name = "buttonBackFavourites";
+            this.buttonBackFavourites.Size = new System.Drawing.Size(87, 49);
+            this.buttonBackFavourites.TabIndex = 46;
+            this.buttonBackFavourites.Text = "Back";
+            this.buttonBackFavourites.UseVisualStyleBackColor = true;
+            this.buttonBackFavourites.Click += new System.EventHandler(this.buttonBackFavourites_Click);
             // 
             // listBoxFavourites
             // 
-            this.listBoxFavourites.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(181)))), ((int)(((byte)(74)))));
+            this.listBoxFavourites.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
             this.listBoxFavourites.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBoxFavourites.FormattingEnabled = true;
             this.listBoxFavourites.ItemHeight = 16;
-            this.listBoxFavourites.Items.AddRange(new object[] {
-            "Dummy Data",
-            "Dummy Data1",
-            "Dummy Data2",
-            "Dummy Data3",
-            "Dummy Data4",
-            "Dummy Data5"});
-            this.listBoxFavourites.Location = new System.Drawing.Point(14, 71);
+            this.listBoxFavourites.Location = new System.Drawing.Point(14, 193);
             this.listBoxFavourites.Name = "listBoxFavourites";
-            this.listBoxFavourites.Size = new System.Drawing.Size(478, 722);
-            this.listBoxFavourites.TabIndex = 1;
+            this.listBoxFavourites.Size = new System.Drawing.Size(478, 610);
+            this.listBoxFavourites.TabIndex = 45;
+            this.listBoxFavourites.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBoxFavourites_DrawItem);
+            this.listBoxFavourites.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.listBoxFavourites_MeasureItem);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
+            this.label10.Font = new System.Drawing.Font("Franklin Gothic Heavy", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(13, 146);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(210, 44);
+            this.label10.TabIndex = 44;
+            this.label10.Text = "Favorieten";
             // 
             // Form1
             // 
@@ -639,11 +747,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Recipe.ResumeLayout(false);
             this.Recipe.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.Search.ResumeLayout(false);
             this.Search.PerformLayout();
             this.Favorieten.ResumeLayout(false);
             this.Favorieten.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -680,19 +791,28 @@
         private System.Windows.Forms.Label labelEasyRecipe;
         private System.Windows.Forms.TabPage Recipe;
         private System.Windows.Forms.Label labelRecentHeader;
+        private System.Windows.Forms.TabPage Search;
+        private System.Windows.Forms.TabPage Favorieten;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button buttonBackRecipe;
+        private System.Windows.Forms.Label labelRecipePreperation;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.ListBox listBoxIngredients;
         private System.Windows.Forms.Label labelRecipeTitle;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label labelRecipePreperation;
-        private System.Windows.Forms.TabPage Search;
+        private System.Windows.Forms.Button buttonBackSearch;
         private System.Windows.Forms.ListBox listBoxSearchResults;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBoxSearch;
-        private System.Windows.Forms.TabPage Favorieten;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button buttonBackFavourites;
         private System.Windows.Forms.ListBox listBoxFavourites;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label13;
     }
 }
 
