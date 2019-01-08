@@ -10,36 +10,22 @@ namespace Easy_Recipe
     {
         //fields
         private string name;
-        private string wachtwoord;
+        private string password;
+        private string email;
         List<Recipe> Recipes;
 
-        //properties
-        public string Name { get => name; set => name = value; }
-        public string Wachtwoord { get => wachtwoord; set => wachtwoord = value; }
-        public List<Recipe> Recipes1 { get => Recipes; set => Recipes = value; }
-
-        //constructor
-        public User(string name, string wachtwoord, List<Recipe> recipes)
+        // Constructor
+        public User(string name, string password, string email)
         {
             this.name = name;
-            this.wachtwoord = wachtwoord;
-            Recipes = recipes;
+            this.password = password;
+            this.email = email;
         }
 
-        //methods
-        public void AddFavorite()
-        {
-
-        }
-
-        public void RemoveFavorite()
-        {
-
-        }
-
-        public void ChangePassword(string nieuwwWachtwoord)
-        {
-
-        }
+        // Properties
+        public string Name { get => name; set => name = value; }
+        public string Password { get => password; set => password = value; }
+        public string Email { get => email; set => email = value; }
+        internal List<Recipe> Recipes1 { get => Recipes; set => Recipes = value; }
     }
 }
