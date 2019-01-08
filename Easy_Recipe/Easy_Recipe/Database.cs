@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Easy_Recipe
 {
-    class DatabaseConnection
+    class Database
     {
         // Connection Fields
         const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Robin\OneDrive\Documents\GitHub\FoodFetish\Easy_Recipe\Easy_Recipe\DB_App.mdf;Integrated Security=True";
@@ -16,21 +16,24 @@ namespace Easy_Recipe
         // Fields
         private List<Recipe> recipes = new List<Recipe>();
         private List<User> users = new List<User>();
-        private List<Ingredient> ingredients = new List<Ingredient>();
         private List<Catagory> catagories = new List<Catagory>();
 
         // Properties
         internal List<Recipe> Recipes { get => recipes; set => recipes = value; }
         internal List<User> Users { get => users; set => users = value; }
-        internal List<Ingredient> Ingredients { get => ingredients; set => ingredients = value; }
         internal List<Catagory> Catagories { get => catagories; set => catagories = value; }
 
         // Methods
-        public List<Ingredient> getIngredients()
+        public List<Recipe> GetRecipes()
         {
-            ingredients = new List<Ingredient>();
+            recipes = new List<Recipe>();
 
-            string query = "SELECT Ingredient.naam FROM Ingredient";
+            string query = "Select Recepten.naam, Recepten.beschrijving, Recepten.tijd, Catagorie.naam, Ingredient.naam,Ing_Rec.hoeveelheid" +
+                            "From Recepten" +
+                            "inner join Cate_Rec on Cate_Rec.Recept_Id = Recepten.Id" +
+                            "inner join Cate_Rec on Cate_Rec.Categorie_Id = Categorie.Categorie_Id" +
+                            "inner join Ing_Rec on Ing_Rec.Rec_Id = Recepten.Id" +
+                            "inner join Ing_Rec on Ing_Rec.Ing_Id = Ingredient.Id";
 
             conn.Open();
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -39,14 +42,22 @@ namespace Easy_Recipe
             {
                 while (reader.Read())
                 {
-                    Ingredient ingredient = new Ingredient(reader.GetString(0));
+                    List<Ingredient> Ingredients = new List<Ingredient>();
+                    Ingredient ingredient = new Ingredient(reader.GetString(4), reader.GetInt32(5));
+                    Ingredients.Add(ingredient);
 
-                    ingredients.Add(ingredient);
+                    catagories = new List<Catagory>();
+                    Catagory catagory = new Catagory(reader.GetString(3));
+                    catagories.Add(catagory);
+
+                    Recipe recipe = new Recipe(reader.GetString(0), reader.GetString(1), reader.GetInt32(2), Ingredients, catagories);
+
+                    recipes.Add(recipe);
                 }
             }
 
             conn.Close();
-            return ingredients;
+            return recipes;
         }
 
         public List<Catagory> getCategories()
