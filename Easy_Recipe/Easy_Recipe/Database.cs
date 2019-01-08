@@ -9,11 +9,16 @@ namespace Easy_Recipe
 {
     class DatabaseConnection
     {
-        public static SqlConnection conn = null;
+        // Connection Fields
+        const string connectionString = @"";
+        SqlConnection conn = new SqlConnection(connectionString);
 
-        public void Connection(string connectionString)
-        {
-            conn = new SqlConnection(connectionString);
-        }
+        // Fields
+        private List<Recipe> recipes = new List<Recipe>();
+        private List<User> users = new List<User>();
+
+        // Properties
+        internal List<Recipe> Recipes { get => recipes; set => recipes = value; }
+        internal List<User> Users { get => users; set => users = value; }
     }
 }
