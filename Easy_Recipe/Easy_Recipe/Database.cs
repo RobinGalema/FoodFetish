@@ -113,5 +113,26 @@ namespace Easy_Recipe
             conn.Close();
             return users;
         }
+
+
+        /// <summary>
+        /// Search for a recipe in the list of recipes for all recipes containing the input in their name
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public List<Recipe> searchRecipe(string input)
+        {
+            List<Recipe> searchedRecipes = new List<Recipe>();
+
+            foreach (Recipe recipe in recipes)
+            {
+                if (recipe.Name.Contains(input))
+                {
+                    searchedRecipes.Add(recipe);
+                }
+            }
+
+            return searchedRecipes;
+        }
     }
 }
