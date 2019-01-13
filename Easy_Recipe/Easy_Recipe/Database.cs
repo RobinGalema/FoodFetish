@@ -10,7 +10,7 @@ namespace Easy_Recipe
     class Database
     {
         // Connection Fields
-        const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Robin\OneDrive\Documents\GitHub\FoodFetish\Easy_Recipe\Easy_Recipe\DB_App.mdf;Integrated Security=True";
+        const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Robin\Documents\GitHub\FoodFetish\Easy_Recipe\Easy_Recipe\DB_App.mdf;Integrated Security=True";
         SqlConnection conn = new SqlConnection(connectionString);
 
         // Fields
@@ -28,12 +28,7 @@ namespace Easy_Recipe
         {
             recipes = new List<Recipe>();
 
-            string query = "Select Recepten.naam, Recepten.beschrijving, Recepten.tijd, Catagorie.naam, Ingredient.naam,Ing_Rec.hoeveelheid" +
-                            "From Recepten" +
-                            "inner join Cate_Rec on Cate_Rec.Recept_Id = Recepten.Id" +
-                            "inner join Cate_Rec on Cate_Rec.Categorie_Id = Categorie.Categorie_Id" +
-                            "inner join Ing_Rec on Ing_Rec.Rec_Id = Recepten.Id" +
-                            "inner join Ing_Rec on Ing_Rec.Ing_Id = Ingredient.Id";
+            string query = "Select * From Recepten";
 
             conn.Open();
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -41,47 +36,49 @@ namespace Easy_Recipe
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
-                {
-                    List<Ingredient> Ingredients = new List<Ingredient>();
-                    Ingredient ingredient = new Ingredient(reader.GetString(4), reader.GetInt32(5));
-                    Ingredients.Add(ingredient);
-
-                    catagories = new List<Catagory>();
-                    Catagory catagory = new Catagory(reader.GetString(3));
-                    catagories.Add(catagory);
-
-                    Recipe recipe = new Recipe(reader.GetString(0), reader.GetString(1), reader.GetInt32(2), Ingredients, catagories);
-
+                { 
+                    Recipe recipe = new Recipe(reader.GetString(1), reader.GetString(2), (Int32)reader.GetInt32(3));
                     recipes.Add(recipe);
                 }
             }
+
+            Console.WriteLine(recipes);
 
             conn.Close();
             return recipes;
         }
 
-        public List<Catagory> getCategories()
+        public List<Ingredient> fillIngredients(int recipeID)
         {
-            catagories = new List<Catagory>();
 
-            string query = "SELECT Categorie.naam FROM Categorie";
+                List<Ingredient> ingredients = new List<Ingredient>();
+
+                string query = "Select Ing_Rec.Id, Ingredient.Naam, Recepten.Naam, Ing_Rec.aantal From ((Ing_Rec" +
+                               " Inner join Ingredient on Ing_Rec.Ing_Id = Ingredient.Id)" +
+                               " Inner join Recepten on Ing_Rec.Rec_Id = Recepten.Id)" +
+                               " Where Ing_Rec.Id = @RecipeID";
 
             conn.Open();
-            SqlCommand cmd = new SqlCommand(query, conn);
+                SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@RecipeId", recipeID);
 
             using (SqlDataReader reader = cmd.ExecuteReader())
-            {
-                while (reader.Read())
                 {
-                    Catagory catagory = new Catagory(reader.GetString(0));
+                    
+                    while (reader.Read())
+                    {
+                        Ingredient ingredient = new Ingredient(reader.GetString(1), reader.GetInt32(3));
+                        ingredients.Add(ingredient);
 
-                    catagories.Add(catagory);
+                    }
                 }
-            }
 
+           
             conn.Close();
-            return catagories;
+            return ingredients;
+            
         }
+
 
         public List<User> GetUsers()
         {

@@ -23,7 +23,7 @@ namespace Easy_Recipe
         public List<Catagory> Catagories { get => catagories; set => catagories = value; }
 
         // Constructor
-        public Recipe(string name, string description, int time, List<Ingredient> ingredients, List<Catagory> catagories)
+        public Recipe(string name, string description, int time)
         {
             this.name = name;
             this.description = description;
