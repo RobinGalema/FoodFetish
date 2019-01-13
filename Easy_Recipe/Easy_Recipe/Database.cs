@@ -24,6 +24,11 @@ namespace Easy_Recipe
         internal List<Catagory> Catagories { get => catagories; set => catagories = value; }
 
         // Methods
+
+        /// <summary>
+        /// Gets all the recipes currently availible in the database
+        /// </summary>
+        /// <returns></returns>
         public List<Recipe> GetRecipes()
         {
             recipes = new List<Recipe>();
@@ -48,6 +53,12 @@ namespace Easy_Recipe
             return recipes;
         }
 
+
+        /// <summary>
+        /// Fills the list of ingredients of the selected recipe with ingredients from the database
+        /// </summary>
+        /// <param name="recipeID"></param>
+        /// <returns></returns>
         public List<Ingredient> fillIngredients(int recipeID)
         {
 
