@@ -49,7 +49,12 @@ namespace Easy_Recipe
 
         }
 
+        
+        //Click event for Add ingredient button
+        private void buttonAddIngredient_Click(object sender, EventArgs e)
+        {
 
+        }
 
 
         //Click Events voor de 3 hoofdbuttons
@@ -67,6 +72,9 @@ namespace Easy_Recipe
         {
             tabControl1.SelectedIndex = 4;
         }
+
+
+
 
         //Click Events voor de pictureboxes.
         private void pictureBoxRecent1_Click(object sender, EventArgs e)
@@ -98,6 +106,8 @@ namespace Easy_Recipe
         {
             tabControl1.SelectedIndex = 1;
         }
+
+
 
 
         
@@ -267,5 +277,7 @@ namespace Easy_Recipe
             e.ItemHeight = (int)txt_size.Height + 2 * ItemMargin;
             e.ItemWidth = (int)txt_size.Width;
         }
+
+        
     }
 }

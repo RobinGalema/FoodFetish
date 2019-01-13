@@ -825,6 +825,7 @@
             this.buttonAddIngredient.TabIndex = 56;
             this.buttonAddIngredient.Text = "Voeg toe";
             this.buttonAddIngredient.UseVisualStyleBackColor = true;
+            this.buttonAddIngredient.Click += new System.EventHandler(this.buttonAddIngredient_Click);
             // 
             // Form1
             // 
