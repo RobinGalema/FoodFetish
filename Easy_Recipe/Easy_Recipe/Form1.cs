@@ -18,31 +18,30 @@ namespace Easy_Recipe
             //Deze regel verstopt de tabcontrol.
             tabControl1.Appearance = TabAppearance.FlatButtons; tabControl1.ItemSize = new Size(0, 1); tabControl1.SizeMode = TabSizeMode.Fixed;
 
-            //var pos = this.PointToScreen(labelRecentHeader.Location);
-            //pos = pictureBoxRecent1.PointToClient(pos);
-            //labelRecentHeader.Parent = pictureBoxRecent1;
-            //labelRecentHeader.Location = pos;
-            //labelRecentHeader.BackColor = Color.Transparent;
-            listBoxIngredients.BorderStyle = BorderStyle.None;
-            //listBoxSearchResults.BorderStyle = BorderStyle.None;
-           // listBoxFavourites.BorderStyle = BorderStyle.None;
+            //Hide border of the listbox
+            listBoxRequiredIngredients.BorderStyle = BorderStyle.None;
+            
+
+
 
             //Format Listboxes
             listBoxFavourites.DrawMode = DrawMode.OwnerDrawVariable;
 
             // Create some items.
-            listBoxFavourites.Items.Add("Name: Gerecht\nBereidingstijd: 10 min");
-            listBoxFavourites.Items.Add("Name: Gerecht\nBereidingstijd: 10 min");
-            listBoxFavourites.Items.Add("Name: Gerecht\nBereidingstijd: 10 min");
+            //Replace with for each loop to put data in the listbox, \n starts a new line.
             listBoxFavourites.Items.Add("Name: Gerecht\nBereidingstijd: 10 min");
 
+
+            //Does the same as the code above for the search results listbox
             listBoxSearchResults.DrawMode = DrawMode.OwnerDrawVariable;
 
-            // Create some items.
             listBoxSearchResults.Items.Add("Name: Gerecht\nBereidingstijd: 10 min");
-            listBoxSearchResults.Items.Add("Name: Gerecht\nBereidingstijd: 10 min");
-            listBoxSearchResults.Items.Add("Name: Gerecht\nBereidingstijd: 10 min");
-            listBoxSearchResults.Items.Add("Name: Gerecht\nBereidingstijd: 10 min");
+
+            //Doest the same as the code above for the ingredients Listbox
+            listBoxIngredients.DrawMode = DrawMode.OwnerDrawVariable;
+
+            listBoxIngredients.Items.Add("Name: Zout\nHoeveelheid: 20 kilogram");
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -53,7 +52,7 @@ namespace Easy_Recipe
 
 
 
-
+        //Click Events voor de 3 hoofdbuttons
         private void buttonSearchRecipe_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 2;
@@ -64,6 +63,12 @@ namespace Easy_Recipe
             tabControl1.SelectedIndex = 3;
         }
 
+        private void buttonIngredients_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 4;
+        }
+
+        //Click Events voor de pictureboxes.
         private void pictureBoxRecent1_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 1;
@@ -93,6 +98,35 @@ namespace Easy_Recipe
         {
             tabControl1.SelectedIndex = 1;
         }
+
+
+        
+        //Click Events for the back buttons.
+        private void buttonBackRecipe_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
+        }
+
+        private void buttonBackSearch_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
+        }
+
+        private void buttonBackFavourites_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
+        }
+
+        private void buttonBackIngredients_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
+        }
+
+
+        
+
+
+        //Code to enable the writing of multiple lines for 1 item in a listbox.
 
         // Calculate the size of an item.
         private int ItemMargin = 5;
@@ -188,24 +222,50 @@ namespace Easy_Recipe
             e.DrawFocusRectangle();
         }
 
-        private void listBoxIngredients_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBoxIngredient_DrawItem(object sender, DrawItemEventArgs e)
         {
+            // Get the ListBox and the item.
+            ListBox lst = sender as ListBox;
+            string txt = (string)lst.Items[e.Index];
 
+            // Draw the background.
+            e.DrawBackground();
+
+            // See if the item is selected.
+            if ((e.State & DrawItemState.Selected) ==
+                DrawItemState.Selected)
+            {
+                // Selected. Draw with the system highlight color.
+                e.Graphics.DrawString(txt, this.Font,
+                    SystemBrushes.HighlightText, e.Bounds.Left,
+                        e.Bounds.Top + ItemMargin);
+            }
+            else
+            {
+                // Not selected. Draw with ListBox's foreground color.
+                using (SolidBrush br = new SolidBrush(e.ForeColor))
+                {
+                    e.Graphics.DrawString(txt, this.Font, br,
+                        e.Bounds.Left, e.Bounds.Top + ItemMargin);
+                }
+            }
+
+            // Draw the focus rectangle if appropriate.
+            e.DrawFocusRectangle();
         }
 
-        private void buttonBackRecipe_Click(object sender, EventArgs e)
+        private void listBoxIngredient_MeasureItem(object sender, MeasureItemEventArgs e)
         {
-            tabControl1.SelectedIndex = 0;
-        }
+            // Get the ListBox and the item.
+            ListBox lst = sender as ListBox;
+            string txt = (string)lst.Items[e.Index];
 
-        private void buttonBackSearch_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedIndex = 0;
-        }
+            // Measure the string.
+            SizeF txt_size = e.Graphics.MeasureString(txt, this.Font);
 
-        private void buttonBackFavourites_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedIndex = 0;
+            // Set the required size.
+            e.ItemHeight = (int)txt_size.Height + 2 * ItemMargin;
+            e.ItemWidth = (int)txt_size.Width;
         }
     }
 }
