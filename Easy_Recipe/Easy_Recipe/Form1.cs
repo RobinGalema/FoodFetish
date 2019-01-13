@@ -18,19 +18,20 @@ namespace Easy_Recipe
         {
             InitializeComponent();
             // Create a list of all recipes that are in the database
-            List<Recipe> recipes = database.GetRecipes();
+            database.Recipes = database.GetRecipes();
 
             // Debug
-            Console.WriteLine(recipes[0].Name);
-            Console.WriteLine(recipes[0].Description);
-            Console.WriteLine(recipes[0].Time);
+            Console.WriteLine(database.Recipes[0].Name);
+            Console.WriteLine(database.Recipes[0].Description);
+            Console.WriteLine(database.Recipes[0].Time);
 
             // Debug
-            recipes[0].Ingredients = database.fillIngredients(1);
-            foreach (Ingredient ingredient in recipes[0].Ingredients)
+            database.Recipes[0].Ingredients = database.fillIngredients(1);
+            foreach (Ingredient ingredient in database.Recipes[0].Ingredients)
             {
                 Console.WriteLine(ingredient.Name);
             }
         }
+
     }
 }

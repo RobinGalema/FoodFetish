@@ -19,9 +19,9 @@ namespace Easy_Recipe
         private List<Catagory> catagories = new List<Catagory>();
 
         // Properties
-        internal List<Recipe> Recipes { get => recipes; set => recipes = value; }
-        internal List<User> Users { get => users; set => users = value; }
-        internal List<Catagory> Catagories { get => catagories; set => catagories = value; }
+        public List<Recipe> Recipes { get => recipes; set => recipes = value; }
+        public List<User> Users { get => users; set => users = value; }
+        public List<Catagory> Catagories { get => catagories; set => catagories = value; }
 
         // Methods
 
@@ -32,7 +32,6 @@ namespace Easy_Recipe
         public List<Recipe> GetRecipes()
         {
             recipes = new List<Recipe>();
-
             string query = "Select * From Recepten";
 
             conn.Open();
@@ -47,12 +46,10 @@ namespace Easy_Recipe
                 }
             }
 
-            Console.WriteLine(recipes);
-
             conn.Close();
-            return recipes;
+            Console.WriteLine(recipes);
+            return recipes;  
         }
-
 
         /// <summary>
         /// Fills the list of ingredients of the selected recipe with ingredients from the database
@@ -90,7 +87,10 @@ namespace Easy_Recipe
             
         }
 
-
+        /// <summary>
+        /// Returns a list of all users currently in the database
+        /// </summary>
+        /// <returns></returns>
         public List<User> GetUsers()
         {
             users = new List<User>();
