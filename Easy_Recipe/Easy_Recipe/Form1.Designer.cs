@@ -57,10 +57,19 @@
             this.buttonSearchRecipe = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelEasyRecipe = new System.Windows.Forms.Label();
+            this.Recipe = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.buttonBackRecipe = new System.Windows.Forms.Button();
+            this.labelRecipePreperation = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBoxSelectedRecipe = new System.Windows.Forms.PictureBox();
+            this.labelRecipeTitle = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.Search = new System.Windows.Forms.TabPage();
+            this.buttonSearch = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.buttonBackSearch = new System.Windows.Forms.Button();
-            this.listBoxSearchResults = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -80,17 +89,9 @@
             this.buttonBackIngredients = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.labelRecipeTitle = new System.Windows.Forms.Label();
+            this.listBoxSearchResults = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.listBoxRequiredIngredients = new System.Windows.Forms.ListBox();
-            this.pictureBoxSelectedRecipe = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labelRecipePreperation = new System.Windows.Forms.Label();
-            this.buttonBackRecipe = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.Recipe = new System.Windows.Forms.TabPage();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSuggestDesert)).BeginInit();
@@ -101,6 +102,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRecent2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRecent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Recipe.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedRecipe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.Search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.Favorieten.SuspendLayout();
@@ -108,9 +112,6 @@
             this.Ingrediënten.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIngredientAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedRecipe)).BeginInit();
-            this.Recipe.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -121,7 +122,7 @@
             this.tabControl1.Controls.Add(this.Favorieten);
             this.tabControl1.Controls.Add(this.Ingrediënten);
             this.tabControl1.Location = new System.Drawing.Point(-7, 2);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(704, 1598);
@@ -157,9 +158,9 @@
             this.Home.Controls.Add(this.pictureBox1);
             this.Home.Controls.Add(this.labelEasyRecipe);
             this.Home.Location = new System.Drawing.Point(4, 33);
-            this.Home.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Home.Margin = new System.Windows.Forms.Padding(4);
             this.Home.Name = "Home";
-            this.Home.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Home.Padding = new System.Windows.Forms.Padding(4);
             this.Home.Size = new System.Drawing.Size(696, 1561);
             this.Home.TabIndex = 0;
             this.Home.Text = "Home";
@@ -181,7 +182,7 @@
             this.buttonIngredients.BackColor = System.Drawing.Color.White;
             this.buttonIngredients.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonIngredients.Location = new System.Drawing.Point(19, 80);
-            this.buttonIngredients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonIngredients.Margin = new System.Windows.Forms.Padding(4);
             this.buttonIngredients.Name = "buttonIngredients";
             this.buttonIngredients.Size = new System.Drawing.Size(217, 51);
             this.buttonIngredients.TabIndex = 59;
@@ -289,7 +290,7 @@
             // 
             this.pictureBoxSuggestDesert.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSuggestDesert.Image")));
             this.pictureBoxSuggestDesert.Location = new System.Drawing.Point(0, 952);
-            this.pictureBoxSuggestDesert.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxSuggestDesert.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxSuggestDesert.Name = "pictureBoxSuggestDesert";
             this.pictureBoxSuggestDesert.Size = new System.Drawing.Size(351, 240);
             this.pictureBoxSuggestDesert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -301,7 +302,7 @@
             // 
             this.pictureBoxSuggestHealthy.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSuggestHealthy.Image")));
             this.pictureBoxSuggestHealthy.Location = new System.Drawing.Point(-6, 639);
-            this.pictureBoxSuggestHealthy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxSuggestHealthy.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxSuggestHealthy.Name = "pictureBoxSuggestHealthy";
             this.pictureBoxSuggestHealthy.Size = new System.Drawing.Size(356, 242);
             this.pictureBoxSuggestHealthy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -313,7 +314,7 @@
             // 
             this.pictureBoxSuggestSalade.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSuggestSalade.Image")));
             this.pictureBoxSuggestSalade.Location = new System.Drawing.Point(346, 952);
-            this.pictureBoxSuggestSalade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxSuggestSalade.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxSuggestSalade.Name = "pictureBoxSuggestSalade";
             this.pictureBoxSuggestSalade.Size = new System.Drawing.Size(351, 240);
             this.pictureBoxSuggestSalade.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -326,7 +327,7 @@
             this.pictureBoxSuggestBudget.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxSuggestBudget.ErrorImage")));
             this.pictureBoxSuggestBudget.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSuggestBudget.Image")));
             this.pictureBoxSuggestBudget.Location = new System.Drawing.Point(348, 639);
-            this.pictureBoxSuggestBudget.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxSuggestBudget.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxSuggestBudget.Name = "pictureBoxSuggestBudget";
             this.pictureBoxSuggestBudget.Size = new System.Drawing.Size(351, 242);
             this.pictureBoxSuggestBudget.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -365,7 +366,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
             this.pictureBox2.Location = new System.Drawing.Point(0, 522);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(697, 117);
             this.pictureBox2.TabIndex = 43;
@@ -411,7 +412,7 @@
             // 
             this.pictureBoxRecent2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRecent2.Image")));
             this.pictureBoxRecent2.Location = new System.Drawing.Point(346, 140);
-            this.pictureBoxRecent2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxRecent2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxRecent2.Name = "pictureBoxRecent2";
             this.pictureBoxRecent2.Size = new System.Drawing.Size(358, 316);
             this.pictureBoxRecent2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -423,7 +424,7 @@
             // 
             this.pictureBoxRecent1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRecent1.Image")));
             this.pictureBoxRecent1.Location = new System.Drawing.Point(-4, 140);
-            this.pictureBoxRecent1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxRecent1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxRecent1.Name = "pictureBoxRecent1";
             this.pictureBoxRecent1.Size = new System.Drawing.Size(358, 316);
             this.pictureBoxRecent1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -436,7 +437,7 @@
             this.buttonFavorites.BackColor = System.Drawing.Color.White;
             this.buttonFavorites.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFavorites.Location = new System.Drawing.Point(473, 80);
-            this.buttonFavorites.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonFavorites.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFavorites.Name = "buttonFavorites";
             this.buttonFavorites.Size = new System.Drawing.Size(204, 51);
             this.buttonFavorites.TabIndex = 34;
@@ -449,7 +450,7 @@
             this.buttonSearchRecipe.BackColor = System.Drawing.Color.White;
             this.buttonSearchRecipe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSearchRecipe.Location = new System.Drawing.Point(245, 80);
-            this.buttonSearchRecipe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSearchRecipe.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSearchRecipe.Name = "buttonSearchRecipe";
             this.buttonSearchRecipe.Size = new System.Drawing.Size(204, 51);
             this.buttonSearchRecipe.TabIndex = 33;
@@ -461,7 +462,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
             this.pictureBox1.Location = new System.Drawing.Point(-3, 66);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(697, 80);
             this.pictureBox1.TabIndex = 32;
@@ -479,23 +480,153 @@
             this.labelEasyRecipe.TabIndex = 31;
             this.labelEasyRecipe.Text = "Easy Recipe";
             // 
+            // Recipe
+            // 
+            this.Recipe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(181)))), ((int)(((byte)(74)))));
+            this.Recipe.Controls.Add(this.label11);
+            this.Recipe.Controls.Add(this.buttonBackRecipe);
+            this.Recipe.Controls.Add(this.labelRecipePreperation);
+            this.Recipe.Controls.Add(this.label4);
+            this.Recipe.Controls.Add(this.label2);
+            this.Recipe.Controls.Add(this.pictureBoxSelectedRecipe);
+            this.Recipe.Controls.Add(this.listBoxRequiredIngredients);
+            this.Recipe.Controls.Add(this.labelRecipeTitle);
+            this.Recipe.Controls.Add(this.pictureBox3);
+            this.Recipe.Location = new System.Drawing.Point(4, 33);
+            this.Recipe.Margin = new System.Windows.Forms.Padding(4);
+            this.Recipe.Name = "Recipe";
+            this.Recipe.Padding = new System.Windows.Forms.Padding(4);
+            this.Recipe.Size = new System.Drawing.Size(696, 1561);
+            this.Recipe.TabIndex = 1;
+            this.Recipe.Text = "Recipe";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Simplisicky Fill", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(208, 0);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(272, 79);
+            this.label11.TabIndex = 40;
+            this.label11.Text = "Easy Recipe";
+            // 
+            // buttonBackRecipe
+            // 
+            this.buttonBackRecipe.Location = new System.Drawing.Point(16, 7);
+            this.buttonBackRecipe.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonBackRecipe.Name = "buttonBackRecipe";
+            this.buttonBackRecipe.Size = new System.Drawing.Size(120, 74);
+            this.buttonBackRecipe.TabIndex = 39;
+            this.buttonBackRecipe.Text = "Back";
+            this.buttonBackRecipe.UseVisualStyleBackColor = true;
+            this.buttonBackRecipe.Click += new System.EventHandler(this.buttonBackRecipe_Click);
+            // 
+            // labelRecipePreperation
+            // 
+            this.labelRecipePreperation.AutoSize = true;
+            this.labelRecipePreperation.BackColor = System.Drawing.Color.White;
+            this.labelRecipePreperation.Font = new System.Drawing.Font("Coolvetica Rg", 9.857142F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecipePreperation.Location = new System.Drawing.Point(25, 1083);
+            this.labelRecipePreperation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRecipePreperation.MaximumSize = new System.Drawing.Size(650, 0);
+            this.labelRecipePreperation.Name = "labelRecipePreperation";
+            this.labelRecipePreperation.Size = new System.Drawing.Size(98, 54);
+            this.labelRecipePreperation.TabIndex = 38;
+            this.labelRecipePreperation.Text = "bereiding\r\n\r\n";
+            this.labelRecipePreperation.Click += new System.EventHandler(this.labelRecipePreperation_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Coolvetica Rg", 14.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(22, 1032);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(255, 41);
+            this.label4.TabIndex = 37;
+            this.label4.Text = "Bereidingswijze:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Coolvetica Rg", 14.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(22, 549);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(213, 41);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Ingrediënten:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // pictureBoxSelectedRecipe
+            // 
+            this.pictureBoxSelectedRecipe.Location = new System.Drawing.Point(0, 90);
+            this.pictureBoxSelectedRecipe.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxSelectedRecipe.Name = "pictureBoxSelectedRecipe";
+            this.pictureBoxSelectedRecipe.Size = new System.Drawing.Size(700, 372);
+            this.pictureBoxSelectedRecipe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxSelectedRecipe.TabIndex = 35;
+            this.pictureBoxSelectedRecipe.TabStop = false;
+            // 
+            // labelRecipeTitle
+            // 
+            this.labelRecipeTitle.AutoSize = true;
+            this.labelRecipeTitle.BackColor = System.Drawing.Color.White;
+            this.labelRecipeTitle.Font = new System.Drawing.Font("Lemon/Milk", 21.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecipeTitle.ForeColor = System.Drawing.Color.Black;
+            this.labelRecipeTitle.Location = new System.Drawing.Point(6, 475);
+            this.labelRecipeTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRecipeTitle.Name = "labelRecipeTitle";
+            this.labelRecipeTitle.Size = new System.Drawing.Size(159, 72);
+            this.labelRecipeTitle.TabIndex = 33;
+            this.labelRecipeTitle.Text = "Title";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.White;
+            this.pictureBox3.Location = new System.Drawing.Point(-6, 90);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(704, 1489);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
             // Search
             // 
             this.Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(181)))), ((int)(((byte)(74)))));
+            this.Search.Controls.Add(this.button1);
+            this.Search.Controls.Add(this.listBoxSearchResults);
             this.Search.Controls.Add(this.buttonSearch);
             this.Search.Controls.Add(this.label12);
             this.Search.Controls.Add(this.buttonBackSearch);
-            this.Search.Controls.Add(this.listBoxSearchResults);
             this.Search.Controls.Add(this.label9);
             this.Search.Controls.Add(this.textBoxSearch);
             this.Search.Controls.Add(this.pictureBox5);
             this.Search.Location = new System.Drawing.Point(4, 33);
-            this.Search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Search.Margin = new System.Windows.Forms.Padding(4);
             this.Search.Name = "Search";
-            this.Search.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Search.Padding = new System.Windows.Forms.Padding(4);
             this.Search.Size = new System.Drawing.Size(696, 1561);
             this.Search.TabIndex = 2;
             this.Search.Text = "Search";
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackColor = System.Drawing.Color.White;
+            this.buttonSearch.Font = new System.Drawing.Font("Coolvetica Rg", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearch.Location = new System.Drawing.Point(511, 178);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(156, 45);
+            this.buttonSearch.TabIndex = 48;
+            this.buttonSearch.Text = "Zoeken";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // label12
             // 
@@ -511,57 +642,45 @@
             // 
             // buttonBackSearch
             // 
+            this.buttonBackSearch.BackColor = System.Drawing.Color.White;
+            this.buttonBackSearch.Font = new System.Drawing.Font("Coolvetica Rg", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBackSearch.Location = new System.Drawing.Point(18, 8);
-            this.buttonBackSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonBackSearch.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBackSearch.Name = "buttonBackSearch";
             this.buttonBackSearch.Size = new System.Drawing.Size(120, 74);
             this.buttonBackSearch.TabIndex = 46;
             this.buttonBackSearch.Text = "Back";
-            this.buttonBackSearch.UseVisualStyleBackColor = true;
+            this.buttonBackSearch.UseVisualStyleBackColor = false;
             this.buttonBackSearch.Click += new System.EventHandler(this.buttonBackSearch_Click);
-            // 
-            // listBoxSearchResults
-            // 
-            this.listBoxSearchResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
-            this.listBoxSearchResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBoxSearchResults.FormattingEnabled = true;
-            this.listBoxSearchResults.ItemHeight = 24;
-            this.listBoxSearchResults.Location = new System.Drawing.Point(9, 245);
-            this.listBoxSearchResults.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.listBoxSearchResults.Name = "listBoxSearchResults";
-            this.listBoxSearchResults.Size = new System.Drawing.Size(674, 842);
-            this.listBoxSearchResults.TabIndex = 45;
-            this.listBoxSearchResults.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBoxSearchResults_DrawItem);
-            this.listBoxSearchResults.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.listBoxSearchResults_MeasureItem);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
+            this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Coolvetica Rg", 21.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(8, 115);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(380, 62);
+            this.label9.Size = new System.Drawing.Size(374, 61);
             this.label9.TabIndex = 44;
             this.label9.Text = "Zoek een recept";
             // 
             // textBoxSearch
             // 
             this.textBoxSearch.Location = new System.Drawing.Point(9, 185);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(470, 29);
             this.textBoxSearch.TabIndex = 43;
             // 
             // pictureBox5
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
+            this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.Location = new System.Drawing.Point(-6, 90);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(704, 1170);
+            this.pictureBox5.Size = new System.Drawing.Size(704, 1475);
             this.pictureBox5.TabIndex = 42;
             this.pictureBox5.TabStop = false;
             // 
@@ -574,9 +693,9 @@
             this.Favorieten.Controls.Add(this.label10);
             this.Favorieten.Controls.Add(this.pictureBox6);
             this.Favorieten.Location = new System.Drawing.Point(4, 33);
-            this.Favorieten.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Favorieten.Margin = new System.Windows.Forms.Padding(4);
             this.Favorieten.Name = "Favorieten";
-            this.Favorieten.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Favorieten.Padding = new System.Windows.Forms.Padding(4);
             this.Favorieten.Size = new System.Drawing.Size(696, 1561);
             this.Favorieten.TabIndex = 3;
             this.Favorieten.Text = "Favorieten";
@@ -596,7 +715,7 @@
             // buttonBackFavourites
             // 
             this.buttonBackFavourites.Location = new System.Drawing.Point(18, 141);
-            this.buttonBackFavourites.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonBackFavourites.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBackFavourites.Name = "buttonBackFavourites";
             this.buttonBackFavourites.Size = new System.Drawing.Size(120, 74);
             this.buttonBackFavourites.TabIndex = 46;
@@ -611,7 +730,7 @@
             this.listBoxFavourites.FormattingEnabled = true;
             this.listBoxFavourites.ItemHeight = 24;
             this.listBoxFavourites.Location = new System.Drawing.Point(19, 290);
-            this.listBoxFavourites.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxFavourites.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxFavourites.Name = "listBoxFavourites";
             this.listBoxFavourites.Size = new System.Drawing.Size(656, 914);
             this.listBoxFavourites.TabIndex = 45;
@@ -635,7 +754,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
             this.pictureBox6.Location = new System.Drawing.Point(-6, 94);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(704, 1144);
             this.pictureBox6.TabIndex = 43;
@@ -654,7 +773,7 @@
             this.Ingrediënten.Controls.Add(this.label14);
             this.Ingrediënten.Controls.Add(this.pictureBox7);
             this.Ingrediënten.Location = new System.Drawing.Point(4, 33);
-            this.Ingrediënten.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Ingrediënten.Margin = new System.Windows.Forms.Padding(4);
             this.Ingrediënten.Name = "Ingrediënten";
             this.Ingrediënten.Size = new System.Drawing.Size(696, 1561);
             this.Ingrediënten.TabIndex = 4;
@@ -663,7 +782,7 @@
             // buttonAddIngredient
             // 
             this.buttonAddIngredient.Location = new System.Drawing.Point(23, 418);
-            this.buttonAddIngredient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddIngredient.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddIngredient.Name = "buttonAddIngredient";
             this.buttonAddIngredient.Size = new System.Drawing.Size(652, 57);
             this.buttonAddIngredient.TabIndex = 56;
@@ -674,7 +793,7 @@
             // numericUpDownIngredientAmount
             // 
             this.numericUpDownIngredientAmount.Location = new System.Drawing.Point(23, 357);
-            this.numericUpDownIngredientAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownIngredientAmount.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownIngredientAmount.Name = "numericUpDownIngredientAmount";
             this.numericUpDownIngredientAmount.Size = new System.Drawing.Size(165, 29);
             this.numericUpDownIngredientAmount.TabIndex = 55;
@@ -708,7 +827,7 @@
             // textBoxIngredientName
             // 
             this.textBoxIngredientName.Location = new System.Drawing.Point(18, 270);
-            this.textBoxIngredientName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxIngredientName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxIngredientName.Name = "textBoxIngredientName";
             this.textBoxIngredientName.Size = new System.Drawing.Size(407, 29);
             this.textBoxIngredientName.TabIndex = 51;
@@ -719,7 +838,7 @@
             this.listBoxIngredients.FormattingEnabled = true;
             this.listBoxIngredients.ItemHeight = 24;
             this.listBoxIngredients.Location = new System.Drawing.Point(18, 520);
-            this.listBoxIngredients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxIngredients.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxIngredients.Name = "listBoxIngredients";
             this.listBoxIngredients.Size = new System.Drawing.Size(656, 676);
             this.listBoxIngredients.TabIndex = 50;
@@ -729,7 +848,7 @@
             // buttonBackIngredients
             // 
             this.buttonBackIngredients.Location = new System.Drawing.Point(18, 142);
-            this.buttonBackIngredients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonBackIngredients.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBackIngredients.Name = "buttonBackIngredients";
             this.buttonBackIngredients.Size = new System.Drawing.Size(120, 74);
             this.buttonBackIngredients.TabIndex = 49;
@@ -753,156 +872,48 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
             this.pictureBox7.Location = new System.Drawing.Point(-6, 90);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(704, 1144);
             this.pictureBox7.TabIndex = 44;
             this.pictureBox7.TabStop = false;
             // 
-            // pictureBox3
+            // listBoxSearchResults
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.White;
-            this.pictureBox3.Location = new System.Drawing.Point(-6, 90);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(704, 1489);
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
+            this.listBoxSearchResults.Font = new System.Drawing.Font("Coolvetica Rg", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxSearchResults.FormattingEnabled = true;
+            this.listBoxSearchResults.ItemHeight = 51;
+            this.listBoxSearchResults.Location = new System.Drawing.Point(9, 235);
+            this.listBoxSearchResults.Name = "listBoxSearchResults";
+            this.listBoxSearchResults.Size = new System.Drawing.Size(672, 514);
+            this.listBoxSearchResults.TabIndex = 49;
             // 
-            // labelRecipeTitle
+            // button1
             // 
-            this.labelRecipeTitle.AutoSize = true;
-            this.labelRecipeTitle.BackColor = System.Drawing.Color.White;
-            this.labelRecipeTitle.Font = new System.Drawing.Font("Lemon/Milk", 21.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRecipeTitle.ForeColor = System.Drawing.Color.Black;
-            this.labelRecipeTitle.Location = new System.Drawing.Point(6, 475);
-            this.labelRecipeTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelRecipeTitle.Name = "labelRecipeTitle";
-            this.labelRecipeTitle.Size = new System.Drawing.Size(161, 74);
-            this.labelRecipeTitle.TabIndex = 33;
-            this.labelRecipeTitle.Text = "Title";
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("Coolvetica Rg", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(434, 773);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(247, 74);
+            this.button1.TabIndex = 50;
+            this.button1.Text = "Selecteer Recept";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // listBoxRequiredIngredients
             // 
             this.listBoxRequiredIngredients.BackColor = System.Drawing.Color.White;
             this.listBoxRequiredIngredients.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBoxRequiredIngredients.Font = new System.Drawing.Font("Coolvetica Rg", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxRequiredIngredients.Font = new System.Drawing.Font("Coolvetica Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxRequiredIngredients.FormattingEnabled = true;
-            this.listBoxRequiredIngredients.ItemHeight = 22;
-            this.listBoxRequiredIngredients.Items.AddRange(new object[] {
-            "Test",
-            "Test2",
-            "Test3"});
+            this.listBoxRequiredIngredients.ItemHeight = 34;
             this.listBoxRequiredIngredients.Location = new System.Drawing.Point(25, 600);
             this.listBoxRequiredIngredients.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxRequiredIngredients.Name = "listBoxRequiredIngredients";
             this.listBoxRequiredIngredients.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listBoxRequiredIngredients.Size = new System.Drawing.Size(643, 398);
+            this.listBoxRequiredIngredients.Size = new System.Drawing.Size(643, 376);
             this.listBoxRequiredIngredients.TabIndex = 34;
-            // 
-            // pictureBoxSelectedRecipe
-            // 
-            this.pictureBoxSelectedRecipe.Location = new System.Drawing.Point(0, 90);
-            this.pictureBoxSelectedRecipe.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBoxSelectedRecipe.Name = "pictureBoxSelectedRecipe";
-            this.pictureBoxSelectedRecipe.Size = new System.Drawing.Size(700, 372);
-            this.pictureBoxSelectedRecipe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxSelectedRecipe.TabIndex = 35;
-            this.pictureBoxSelectedRecipe.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Coolvetica Rg", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(22, 549);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 32);
-            this.label2.TabIndex = 36;
-            this.label2.Text = "Ingrediënten:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Coolvetica Rg", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(22, 1032);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(209, 34);
-            this.label4.TabIndex = 37;
-            this.label4.Text = "Bereidingswijze:";
-            // 
-            // labelRecipePreperation
-            // 
-            this.labelRecipePreperation.AutoSize = true;
-            this.labelRecipePreperation.BackColor = System.Drawing.Color.White;
-            this.labelRecipePreperation.Font = new System.Drawing.Font("Coolvetica Rg", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRecipePreperation.Location = new System.Drawing.Point(22, 1074);
-            this.labelRecipePreperation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelRecipePreperation.MaximumSize = new System.Drawing.Size(650, 0);
-            this.labelRecipePreperation.Name = "labelRecipePreperation";
-            this.labelRecipePreperation.Size = new System.Drawing.Size(84, 48);
-            this.labelRecipePreperation.TabIndex = 38;
-            this.labelRecipePreperation.Text = "bereiding\r\n\r\n";
-            this.labelRecipePreperation.Click += new System.EventHandler(this.labelRecipePreperation_Click);
-            // 
-            // buttonBackRecipe
-            // 
-            this.buttonBackRecipe.Location = new System.Drawing.Point(16, 7);
-            this.buttonBackRecipe.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonBackRecipe.Name = "buttonBackRecipe";
-            this.buttonBackRecipe.Size = new System.Drawing.Size(120, 74);
-            this.buttonBackRecipe.TabIndex = 39;
-            this.buttonBackRecipe.Text = "Back";
-            this.buttonBackRecipe.UseVisualStyleBackColor = true;
-            this.buttonBackRecipe.Click += new System.EventHandler(this.buttonBackRecipe_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Simplisicky Fill", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(208, 0);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(272, 79);
-            this.label11.TabIndex = 40;
-            this.label11.Text = "Easy Recipe";
-            // 
-            // Recipe
-            // 
-            this.Recipe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(181)))), ((int)(((byte)(74)))));
-            this.Recipe.Controls.Add(this.label11);
-            this.Recipe.Controls.Add(this.buttonBackRecipe);
-            this.Recipe.Controls.Add(this.labelRecipePreperation);
-            this.Recipe.Controls.Add(this.label4);
-            this.Recipe.Controls.Add(this.label2);
-            this.Recipe.Controls.Add(this.pictureBoxSelectedRecipe);
-            this.Recipe.Controls.Add(this.listBoxRequiredIngredients);
-            this.Recipe.Controls.Add(this.labelRecipeTitle);
-            this.Recipe.Controls.Add(this.pictureBox3);
-            this.Recipe.Location = new System.Drawing.Point(4, 33);
-            this.Recipe.Margin = new System.Windows.Forms.Padding(4);
-            this.Recipe.Name = "Recipe";
-            this.Recipe.Padding = new System.Windows.Forms.Padding(4);
-            this.Recipe.Size = new System.Drawing.Size(696, 1561);
-            this.Recipe.TabIndex = 1;
-            this.Recipe.Text = "Recipe";
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Location = new System.Drawing.Point(511, 178);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(156, 45);
-            this.buttonSearch.TabIndex = 48;
-            this.buttonSearch.Text = "Zoeken";
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // Form1
             // 
@@ -911,7 +922,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(181)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(690, 1592);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -926,6 +937,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRecent2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRecent1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Recipe.ResumeLayout(false);
+            this.Recipe.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedRecipe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.Search.ResumeLayout(false);
             this.Search.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -936,10 +951,6 @@
             this.Ingrediënten.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIngredientAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedRecipe)).EndInit();
-            this.Recipe.ResumeLayout(false);
-            this.Recipe.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -975,7 +986,6 @@
         private System.Windows.Forms.TabPage Search;
         private System.Windows.Forms.TabPage Favorieten;
         private System.Windows.Forms.Button buttonBackSearch;
-        private System.Windows.Forms.ListBox listBoxSearchResults;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -1004,10 +1014,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBoxSelectedRecipe;
-        private System.Windows.Forms.ListBox listBoxRequiredIngredients;
         private System.Windows.Forms.Label labelRecipeTitle;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.ListBox listBoxSearchResults;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBoxRequiredIngredients;
     }
 }
 

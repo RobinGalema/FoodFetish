@@ -29,11 +29,6 @@ namespace Easy_Recipe
             // Create some items.
             //Replace with for each loop to put data in the listbox, \n starts a new line.
 
-
-            //Does the same as the code above for the search results listbox
-            listBoxSearchResults.DrawMode = DrawMode.OwnerDrawVariable;
-
-
             //Doest the same as the code above for the ingredients Listbox
             listBoxIngredients.DrawMode = DrawMode.OwnerDrawVariable;
 
@@ -41,6 +36,8 @@ namespace Easy_Recipe
             database.GetRecipes();
 
             listBoxSearchResults.DataSource = database.Recipes;
+            listBoxSearchResults.DisplayMember = "name".ToString();
+            listBoxSearchResults.ValueMember = "recipeId";
 
         }
 
@@ -178,51 +175,6 @@ namespace Easy_Recipe
             e.DrawFocusRectangle();
         }
 
-        private void listBoxSearchResults_MeasureItem(object sender, MeasureItemEventArgs e)
-        {
-            // Get the ListBox and the item.
-            ListBox lst = sender as ListBox;
-            string txt = (string)lst.Items[e.Index];
-
-            // Measure the string.
-            SizeF txt_size = e.Graphics.MeasureString(txt, this.Font);
-
-            // Set the required size.
-            e.ItemHeight = (int)txt_size.Height + 2 * ItemMargin;
-            e.ItemWidth = (int)txt_size.Width;
-        }
-
-        private void listBoxSearchResults_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            // Get the ListBox and the item.
-            ListBox lst = sender as ListBox;
-            string txt = (string)lst.Items[e.Index];
-
-            // Draw the background.
-            e.DrawBackground();
-
-            // See if the item is selected.
-            if ((e.State & DrawItemState.Selected) ==
-                DrawItemState.Selected)
-            {
-                // Selected. Draw with the system highlight color.
-                e.Graphics.DrawString(txt, this.Font,
-                    SystemBrushes.HighlightText, e.Bounds.Left,
-                        e.Bounds.Top + ItemMargin);
-            }
-            else
-            {
-                // Not selected. Draw with ListBox's foreground color.
-                using (SolidBrush br = new SolidBrush(e.ForeColor))
-                {
-                    e.Graphics.DrawString(txt, this.Font, br,
-                        e.Bounds.Left, e.Bounds.Top + ItemMargin);
-                }
-            }
-
-            // Draw the focus rectangle if appropriate.
-            e.DrawFocusRectangle();
-        }
 
         private void listBoxIngredient_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -275,9 +227,36 @@ namespace Easy_Recipe
 
         }
 
+        /// <summary>
+        /// Search for recipe with the input of the textbox included and show them in the listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonSearch_Click(object sender, EventArgs e)
         {
+            string input = textBoxSearch.Text;
 
+            List<Recipe> searchedRecipes = database.searchRecipe(input);
+            listBoxSearchResults.DataSource = searchedRecipes;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Recipe selectedrecipe = database.Recipes[(Int32)listBoxSearchResults.SelectedValue - 1];
+            selectedrecipe.Ingredients = database.fillIngredients((Int32)listBoxSearchResults.SelectedValue);
+
+            Console.WriteLine((Int32)listBoxSearchResults.SelectedValue);
+            Console.WriteLine(database.Recipes[(Int32)listBoxSearchResults.SelectedValue - 1].Ingredients);
+
+            labelRecipeTitle.Text = selectedrecipe.Name;
+            labelRecipePreperation.Text = selectedrecipe.Description;
+
+            listBoxRequiredIngredients.DataSource = selectedrecipe.Ingredients;
+            listBoxRequiredIngredients.DisplayMember = "displayValue";
+
+            listBoxRequiredIngredients.Update();
+
+            tabControl1.SelectedIndex = 1;
         }
     }
 }

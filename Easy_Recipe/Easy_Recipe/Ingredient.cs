@@ -12,10 +12,12 @@ namespace Easy_Recipe
         // The name of the ingredient 
         private string name;
         private int amountNeeded;
+        private string displayValue;
 
         // Properties
         public string Name { get => name; set => name = value; }
         public int AmountNeeded { get => amountNeeded; set => amountNeeded = value; }
+        public string DisplayValue { get => displayValue; set => displayValue = value; }
 
         // Constructor
         public Ingredient(string name, int amountNeeded)
@@ -23,6 +25,7 @@ namespace Easy_Recipe
             // giving the name of ingredient
             this.name = name;
             this.amountNeeded = amountNeeded;
+            displayValue = name + ": " + amountNeeded.ToString();
         }
 
     }

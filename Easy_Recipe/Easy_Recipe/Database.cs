@@ -41,7 +41,7 @@ namespace Easy_Recipe
             {
                 while (reader.Read())
                 { 
-                    Recipe recipe = new Recipe(reader.GetString(1), reader.GetString(2), (Int32)reader.GetInt32(3));
+                    Recipe recipe = new Recipe(reader.GetString(1), reader.GetString(2), (Int32)reader.GetInt32(3), reader.GetInt32(0));
                     recipes.Add(recipe);
                 }
             }
@@ -77,7 +77,8 @@ namespace Easy_Recipe
                     {
                         Ingredient ingredient = new Ingredient(reader.GetString(1), reader.GetInt32(3));
                         ingredients.Add(ingredient);
-
+                        Console.WriteLine("Ingredient added");
+                    Console.WriteLine(ingredient.Name + " " + ingredient.AmountNeeded.ToString());
                     }
                 }
 
