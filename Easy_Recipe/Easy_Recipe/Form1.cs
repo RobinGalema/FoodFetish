@@ -22,33 +22,31 @@ namespace Easy_Recipe
 
             //Hide border of the listbox
             listBoxRequiredIngredients.BorderStyle = BorderStyle.None;
-            
-
-
 
             //Format Listboxes
             listBoxFavourites.DrawMode = DrawMode.OwnerDrawVariable;
 
             // Create some items.
             //Replace with for each loop to put data in the listbox, \n starts a new line.
-            listBoxFavourites.Items.Add("Name: Gerecht\nBereidingstijd: 10 min");
 
 
             //Does the same as the code above for the search results listbox
             listBoxSearchResults.DrawMode = DrawMode.OwnerDrawVariable;
 
-            listBoxSearchResults.Items.Add("Name: Gerecht\nBereidingstijd: 10 min");
 
             //Doest the same as the code above for the ingredients Listbox
             listBoxIngredients.DrawMode = DrawMode.OwnerDrawVariable;
 
-            listBoxIngredients.Items.Add("Name: Zout\nHoeveelheid: 20 kilogram");
+            //Retrieve recipes and bind them to the listbox
+            database.GetRecipes();
+
+            listBoxSearchResults.DataSource = database.Recipes;
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         
@@ -108,10 +106,6 @@ namespace Easy_Recipe
         {
             tabControl1.SelectedIndex = 1;
         }
-
-
-
-
         
         //Click Events for the back buttons.
         private void buttonBackRecipe_Click(object sender, EventArgs e)
@@ -133,10 +127,6 @@ namespace Easy_Recipe
         {
             tabControl1.SelectedIndex = 0;
         }
-
-
-        
-
 
         //Code to enable the writing of multiple lines for 1 item in a listbox.
 
@@ -280,6 +270,14 @@ namespace Easy_Recipe
             e.ItemWidth = (int)txt_size.Width;
         }
 
-        
+        private void labelRecipePreperation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
