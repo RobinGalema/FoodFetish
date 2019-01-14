@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Easy_Recipe
 {
@@ -14,6 +15,7 @@ namespace Easy_Recipe
     {
         // Create the database object to receive data
         Database database = new Database();
+        Recipe selectedrecipe;
         public Form1()
         {
             InitializeComponent();
@@ -242,7 +244,7 @@ namespace Easy_Recipe
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Recipe selectedrecipe = database.Recipes[(Int32)listBoxSearchResults.SelectedValue - 1];
+            selectedrecipe = database.Recipes[(Int32)listBoxSearchResults.SelectedValue - 1];
             selectedrecipe.Ingredients = database.fillIngredients((Int32)listBoxSearchResults.SelectedValue);
 
             Console.WriteLine((Int32)listBoxSearchResults.SelectedValue);
@@ -257,6 +259,14 @@ namespace Easy_Recipe
             listBoxRequiredIngredients.Update();
 
             tabControl1.SelectedIndex = 1;
+        }
+
+        private void buttonCookRecipe_Click(object sender, EventArgs e)
+        {
+            // Add the recipe to a file which tracks which recipes you have previously cooked
+            File.AppendAllText(@"C:\Users\Robin\Documents\GitHub\FoodFetish\Easy_Recipe\Easy_Recipe\cookedRecipes.txt", selectedrecipe.Name + Environment.NewLine);
+
+            MessageBox.Show("Recept toegevoegd aan gekookte recepten");
         }
     }
 }

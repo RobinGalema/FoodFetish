@@ -64,9 +64,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBoxSelectedRecipe = new System.Windows.Forms.PictureBox();
+            this.listBoxRequiredIngredients = new System.Windows.Forms.ListBox();
             this.labelRecipeTitle = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.Search = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.listBoxSearchResults = new System.Windows.Forms.ListBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.buttonBackSearch = new System.Windows.Forms.Button();
@@ -89,9 +92,7 @@
             this.buttonBackIngredients = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.listBoxSearchResults = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBoxRequiredIngredients = new System.Windows.Forms.ListBox();
+            this.buttonCookRecipe = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSuggestDesert)).BeginInit();
@@ -483,6 +484,7 @@
             // Recipe
             // 
             this.Recipe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(181)))), ((int)(((byte)(74)))));
+            this.Recipe.Controls.Add(this.buttonCookRecipe);
             this.Recipe.Controls.Add(this.label11);
             this.Recipe.Controls.Add(this.buttonBackRecipe);
             this.Recipe.Controls.Add(this.labelRecipePreperation);
@@ -574,6 +576,20 @@
             this.pictureBoxSelectedRecipe.TabIndex = 35;
             this.pictureBoxSelectedRecipe.TabStop = false;
             // 
+            // listBoxRequiredIngredients
+            // 
+            this.listBoxRequiredIngredients.BackColor = System.Drawing.Color.White;
+            this.listBoxRequiredIngredients.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBoxRequiredIngredients.Font = new System.Drawing.Font("Coolvetica Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxRequiredIngredients.FormattingEnabled = true;
+            this.listBoxRequiredIngredients.ItemHeight = 34;
+            this.listBoxRequiredIngredients.Location = new System.Drawing.Point(25, 600);
+            this.listBoxRequiredIngredients.Margin = new System.Windows.Forms.Padding(4);
+            this.listBoxRequiredIngredients.Name = "listBoxRequiredIngredients";
+            this.listBoxRequiredIngredients.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.listBoxRequiredIngredients.Size = new System.Drawing.Size(643, 376);
+            this.listBoxRequiredIngredients.TabIndex = 34;
+            // 
             // labelRecipeTitle
             // 
             this.labelRecipeTitle.AutoSize = true;
@@ -615,6 +631,29 @@
             this.Search.Size = new System.Drawing.Size(696, 1561);
             this.Search.TabIndex = 2;
             this.Search.Text = "Search";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("Coolvetica Rg", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(434, 773);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(247, 74);
+            this.button1.TabIndex = 50;
+            this.button1.Text = "Selecteer Recept";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // listBoxSearchResults
+            // 
+            this.listBoxSearchResults.Font = new System.Drawing.Font("Coolvetica Rg", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxSearchResults.FormattingEnabled = true;
+            this.listBoxSearchResults.ItemHeight = 51;
+            this.listBoxSearchResults.Location = new System.Drawing.Point(9, 235);
+            this.listBoxSearchResults.Name = "listBoxSearchResults";
+            this.listBoxSearchResults.Size = new System.Drawing.Size(672, 514);
+            this.listBoxSearchResults.TabIndex = 49;
             // 
             // buttonSearch
             // 
@@ -878,42 +917,17 @@
             this.pictureBox7.TabIndex = 44;
             this.pictureBox7.TabStop = false;
             // 
-            // listBoxSearchResults
+            // buttonCookRecipe
             // 
-            this.listBoxSearchResults.Font = new System.Drawing.Font("Coolvetica Rg", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxSearchResults.FormattingEnabled = true;
-            this.listBoxSearchResults.ItemHeight = 51;
-            this.listBoxSearchResults.Location = new System.Drawing.Point(9, 235);
-            this.listBoxSearchResults.Name = "listBoxSearchResults";
-            this.listBoxSearchResults.Size = new System.Drawing.Size(672, 514);
-            this.listBoxSearchResults.TabIndex = 49;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Coolvetica Rg", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(434, 773);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(247, 74);
-            this.button1.TabIndex = 50;
-            this.button1.Text = "Selecteer Recept";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // listBoxRequiredIngredients
-            // 
-            this.listBoxRequiredIngredients.BackColor = System.Drawing.Color.White;
-            this.listBoxRequiredIngredients.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBoxRequiredIngredients.Font = new System.Drawing.Font("Coolvetica Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxRequiredIngredients.FormattingEnabled = true;
-            this.listBoxRequiredIngredients.ItemHeight = 34;
-            this.listBoxRequiredIngredients.Location = new System.Drawing.Point(25, 600);
-            this.listBoxRequiredIngredients.Margin = new System.Windows.Forms.Padding(4);
-            this.listBoxRequiredIngredients.Name = "listBoxRequiredIngredients";
-            this.listBoxRequiredIngredients.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listBoxRequiredIngredients.Size = new System.Drawing.Size(643, 376);
-            this.listBoxRequiredIngredients.TabIndex = 34;
+            this.buttonCookRecipe.BackColor = System.Drawing.Color.White;
+            this.buttonCookRecipe.Font = new System.Drawing.Font("Coolvetica Rg", 9.857142F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCookRecipe.Location = new System.Drawing.Point(472, 489);
+            this.buttonCookRecipe.Name = "buttonCookRecipe";
+            this.buttonCookRecipe.Size = new System.Drawing.Size(196, 70);
+            this.buttonCookRecipe.TabIndex = 41;
+            this.buttonCookRecipe.Text = "Kook Recept";
+            this.buttonCookRecipe.UseVisualStyleBackColor = false;
+            this.buttonCookRecipe.Click += new System.EventHandler(this.buttonCookRecipe_Click);
             // 
             // Form1
             // 
@@ -1020,6 +1034,7 @@
         private System.Windows.Forms.ListBox listBoxSearchResults;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox listBoxRequiredIngredients;
+        private System.Windows.Forms.Button buttonCookRecipe;
     }
 }
 
