@@ -79,7 +79,6 @@
             this.Favorieten = new System.Windows.Forms.TabPage();
             this.label13 = new System.Windows.Forms.Label();
             this.buttonBackFavourites = new System.Windows.Forms.Button();
-            this.listBoxFavourites = new System.Windows.Forms.ListBox();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.Ingrediënten = new System.Windows.Forms.TabPage();
@@ -93,6 +92,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.buttonCookRecipe = new System.Windows.Forms.Button();
+            this.listBoxFavorites = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSuggestDesert)).BeginInit();
@@ -726,9 +726,9 @@
             // Favorieten
             // 
             this.Favorieten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(181)))), ((int)(((byte)(74)))));
+            this.Favorieten.Controls.Add(this.listBoxFavorites);
             this.Favorieten.Controls.Add(this.label13);
             this.Favorieten.Controls.Add(this.buttonBackFavourites);
-            this.Favorieten.Controls.Add(this.listBoxFavourites);
             this.Favorieten.Controls.Add(this.label10);
             this.Favorieten.Controls.Add(this.pictureBox6);
             this.Favorieten.Location = new System.Drawing.Point(4, 33);
@@ -753,7 +753,8 @@
             // 
             // buttonBackFavourites
             // 
-            this.buttonBackFavourites.Location = new System.Drawing.Point(18, 141);
+            this.buttonBackFavourites.Font = new System.Drawing.Font("Coolvetica Rg", 9.857142F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBackFavourites.Location = new System.Drawing.Point(16, 12);
             this.buttonBackFavourites.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBackFavourites.Name = "buttonBackFavourites";
             this.buttonBackFavourites.Size = new System.Drawing.Size(120, 74);
@@ -762,40 +763,26 @@
             this.buttonBackFavourites.UseVisualStyleBackColor = true;
             this.buttonBackFavourites.Click += new System.EventHandler(this.buttonBackFavourites_Click);
             // 
-            // listBoxFavourites
-            // 
-            this.listBoxFavourites.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
-            this.listBoxFavourites.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBoxFavourites.FormattingEnabled = true;
-            this.listBoxFavourites.ItemHeight = 24;
-            this.listBoxFavourites.Location = new System.Drawing.Point(19, 290);
-            this.listBoxFavourites.Margin = new System.Windows.Forms.Padding(4);
-            this.listBoxFavourites.Name = "listBoxFavourites";
-            this.listBoxFavourites.Size = new System.Drawing.Size(656, 914);
-            this.listBoxFavourites.TabIndex = 45;
-            this.listBoxFavourites.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBoxFavourites_DrawItem);
-            this.listBoxFavourites.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.listBoxFavourites_MeasureItem);
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(18, 219);
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Coolvetica Rg", 21.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(16, 126);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(270, 59);
+            this.label10.Size = new System.Drawing.Size(255, 62);
             this.label10.TabIndex = 44;
             this.label10.Text = "Favorieten";
             // 
             // pictureBox6
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(218)))), ((int)(((byte)(96)))));
+            this.pictureBox6.BackColor = System.Drawing.Color.White;
             this.pictureBox6.Location = new System.Drawing.Point(-6, 94);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(704, 1144);
+            this.pictureBox6.Size = new System.Drawing.Size(704, 1467);
             this.pictureBox6.TabIndex = 43;
             this.pictureBox6.TabStop = false;
             // 
@@ -881,8 +868,6 @@
             this.listBoxIngredients.Name = "listBoxIngredients";
             this.listBoxIngredients.Size = new System.Drawing.Size(656, 676);
             this.listBoxIngredients.TabIndex = 50;
-            this.listBoxIngredients.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBoxIngredient_DrawItem);
-            this.listBoxIngredients.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.listBoxIngredient_MeasureItem);
             // 
             // buttonBackIngredients
             // 
@@ -928,6 +913,16 @@
             this.buttonCookRecipe.Text = "Kook Recept";
             this.buttonCookRecipe.UseVisualStyleBackColor = false;
             this.buttonCookRecipe.Click += new System.EventHandler(this.buttonCookRecipe_Click);
+            // 
+            // listBoxFavorites
+            // 
+            this.listBoxFavorites.Font = new System.Drawing.Font("Coolvetica Rg", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxFavorites.FormattingEnabled = true;
+            this.listBoxFavorites.ItemHeight = 40;
+            this.listBoxFavorites.Location = new System.Drawing.Point(16, 210);
+            this.listBoxFavorites.Name = "listBoxFavorites";
+            this.listBoxFavorites.Size = new System.Drawing.Size(656, 884);
+            this.listBoxFavorites.TabIndex = 48;
             // 
             // Form1
             // 
@@ -1004,7 +999,6 @@
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button buttonBackFavourites;
-        private System.Windows.Forms.ListBox listBoxFavourites;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label7;
@@ -1035,6 +1029,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox listBoxRequiredIngredients;
         private System.Windows.Forms.Button buttonCookRecipe;
+        private System.Windows.Forms.ListBox listBoxFavorites;
     }
 }
 

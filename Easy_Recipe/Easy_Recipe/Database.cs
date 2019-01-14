@@ -31,24 +31,32 @@ namespace Easy_Recipe
         /// <returns></returns>
         public List<Recipe> GetRecipes()
         {
-            recipes = new List<Recipe>();
-            string query = "Select * From Recepten";
-
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(query, conn);
-
-            using (SqlDataReader reader = cmd.ExecuteReader())
+            try
             {
-                while (reader.Read())
-                { 
-                    Recipe recipe = new Recipe(reader.GetString(1), reader.GetString(2), (Int32)reader.GetInt32(3), reader.GetInt32(0));
-                    recipes.Add(recipe);
-                }
-            }
+                recipes = new List<Recipe>();
+                string query = "Select * From Recepten";
 
-            conn.Close();
-            Console.WriteLine(recipes);
-            return recipes;  
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Recipe recipe = new Recipe(reader.GetString(1), reader.GetString(2), (Int32)reader.GetInt32(3), reader.GetInt32(0));
+                        recipes.Add(recipe);
+                    }
+                }
+
+                conn.Close();
+                Console.WriteLine(recipes);
+                return recipes;
+            }
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show("Er is iets fout gegaan bij het ophalen van de recepten.");
+                return recipes;
+            }
         }
 
         /// <summary>
@@ -58,7 +66,8 @@ namespace Easy_Recipe
         /// <returns></returns>
         public List<Ingredient> fillIngredients(int recipeID)
         {
-
+            try
+            {
                 List<Ingredient> ingredients = new List<Ingredient>();
 
                 string query = "Select Ing_Rec.Id, Ingredient.Naam, Recepten.Naam, Ing_Rec.aantal From ((Ing_Rec" +
@@ -66,25 +75,32 @@ namespace Easy_Recipe
                                " Inner join Recepten on Ing_Rec.Rec_Id = Recepten.Id)" +
                                " Where Ing_Rec.Id = @RecipeID";
 
-            conn.Open();
+                conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@RecipeId", recipeID);
+                cmd.Parameters.AddWithValue("@RecipeId", recipeID);
 
-            using (SqlDataReader reader = cmd.ExecuteReader())
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    
+
                     while (reader.Read())
                     {
                         Ingredient ingredient = new Ingredient(reader.GetString(1), reader.GetInt32(3));
                         ingredients.Add(ingredient);
                         Console.WriteLine("Ingredient added");
-                    Console.WriteLine(ingredient.Name + " " + ingredient.AmountNeeded.ToString());
+                        Console.WriteLine(ingredient.Name + " " + ingredient.AmountNeeded.ToString());
                     }
                 }
 
-           
-            conn.Close();
-            return ingredients;
+
+                conn.Close();
+                return ingredients;
+            }
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show("Er is iets fout gegaan bij het ophalen van de ingrediënten.");
+                List<Ingredient> ingredients = new List<Ingredient>();
+                return ingredients;
+            }
             
         }
 
@@ -96,7 +112,7 @@ namespace Easy_Recipe
         {
             users = new List<User>();
 
-            string query = "SELECT Gebruiker.Naam, Gebruiker.Wachtwoord, Gebruiker.E-mail FROM Gebruiker";
+            string query = "SELECT Gebruiker.Naam, Gebruiker.Wachtwoord, Gebruiker.EMail FROM Gebruiker";
 
             conn.Open();
             SqlCommand cmd = new SqlCommand(query, conn);

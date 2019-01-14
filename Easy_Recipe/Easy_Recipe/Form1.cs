@@ -16,6 +16,8 @@ namespace Easy_Recipe
         // Create the database object to receive data
         Database database = new Database();
         Recipe selectedrecipe;
+        List<User> users;
+
         public Form1()
         {
             InitializeComponent();
@@ -24,9 +26,6 @@ namespace Easy_Recipe
 
             //Hide border of the listbox
             listBoxRequiredIngredients.BorderStyle = BorderStyle.None;
-
-            //Format Listboxes
-            listBoxFavourites.DrawMode = DrawMode.OwnerDrawVariable;
 
             // Create some items.
             //Replace with for each loop to put data in the listbox, \n starts a new line.
@@ -40,6 +39,16 @@ namespace Easy_Recipe
             listBoxSearchResults.DataSource = database.Recipes;
             listBoxSearchResults.DisplayMember = "name".ToString();
             listBoxSearchResults.ValueMember = "recipeId";
+
+            users = database.GetUsers();
+            try
+            {
+                User currentUser = users[0];
+            }
+            catch
+            {
+                MessageBox.Show("Er zijn geen gebruikers gevonden. U gebruikt de app momenteel als gast.");
+            }
 
         }
 
@@ -127,103 +136,6 @@ namespace Easy_Recipe
             tabControl1.SelectedIndex = 0;
         }
 
-        //Code to enable the writing of multiple lines for 1 item in a listbox.
-
-        // Calculate the size of an item.
-        private int ItemMargin = 5;
-        private void listBoxFavourites_MeasureItem(object sender, MeasureItemEventArgs e)
-        {
-            // Get the ListBox and the item.
-            ListBox lst = sender as ListBox;
-            string txt = (string)lst.Items[e.Index];
-
-            // Measure the string.
-            SizeF txt_size = e.Graphics.MeasureString(txt, this.Font);
-
-            // Set the required size.
-            e.ItemHeight = (int)txt_size.Height + 2 * ItemMargin;
-            e.ItemWidth = (int)txt_size.Width;
-        }
-
-        private void listBoxFavourites_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            // Get the ListBox and the item.
-            ListBox lst = sender as ListBox;
-            string txt = (string)lst.Items[e.Index];
-
-            // Draw the background.
-            e.DrawBackground();
-
-            // See if the item is selected.
-            if ((e.State & DrawItemState.Selected) ==
-                DrawItemState.Selected)
-            {
-                // Selected. Draw with the system highlight color.
-                e.Graphics.DrawString(txt, this.Font,
-                    SystemBrushes.HighlightText, e.Bounds.Left,
-                        e.Bounds.Top + ItemMargin);
-            }
-            else
-            {
-                // Not selected. Draw with ListBox's foreground color.
-                using (SolidBrush br = new SolidBrush(e.ForeColor))
-                {
-                    e.Graphics.DrawString(txt, this.Font, br,
-                        e.Bounds.Left, e.Bounds.Top + ItemMargin);
-                }
-            }
-
-            // Draw the focus rectangle if appropriate.
-            e.DrawFocusRectangle();
-        }
-
-
-        private void listBoxIngredient_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            // Get the ListBox and the item.
-            ListBox lst = sender as ListBox;
-            string txt = (string)lst.Items[e.Index];
-
-            // Draw the background.
-            e.DrawBackground();
-
-            // See if the item is selected.
-            if ((e.State & DrawItemState.Selected) ==
-                DrawItemState.Selected)
-            {
-                // Selected. Draw with the system highlight color.
-                e.Graphics.DrawString(txt, this.Font,
-                    SystemBrushes.HighlightText, e.Bounds.Left,
-                        e.Bounds.Top + ItemMargin);
-            }
-            else
-            {
-                // Not selected. Draw with ListBox's foreground color.
-                using (SolidBrush br = new SolidBrush(e.ForeColor))
-                {
-                    e.Graphics.DrawString(txt, this.Font, br,
-                        e.Bounds.Left, e.Bounds.Top + ItemMargin);
-                }
-            }
-
-            // Draw the focus rectangle if appropriate.
-            e.DrawFocusRectangle();
-        }
-
-        private void listBoxIngredient_MeasureItem(object sender, MeasureItemEventArgs e)
-        {
-            // Get the ListBox and the item.
-            ListBox lst = sender as ListBox;
-            string txt = (string)lst.Items[e.Index];
-
-            // Measure the string.
-            SizeF txt_size = e.Graphics.MeasureString(txt, this.Font);
-
-            // Set the required size.
-            e.ItemHeight = (int)txt_size.Height + 2 * ItemMargin;
-            e.ItemWidth = (int)txt_size.Width;
-        }
-
         private void labelRecipePreperation_Click(object sender, EventArgs e)
         {
 
@@ -244,29 +156,50 @@ namespace Easy_Recipe
 
         private void button1_Click(object sender, EventArgs e)
         {
-            selectedrecipe = database.Recipes[(Int32)listBoxSearchResults.SelectedValue - 1];
-            selectedrecipe.Ingredients = database.fillIngredients((Int32)listBoxSearchResults.SelectedValue);
+            try
+            {
+                // Check which recipe in the listbox is selected and import that recipe into selectedrecipe
+                selectedrecipe = database.Recipes[(Int32)listBoxSearchResults.SelectedValue - 1];
+                // Fill the recipe with the right ingredients
+                selectedrecipe.Ingredients = database.fillIngredients((Int32)listBoxSearchResults.SelectedValue);
 
-            Console.WriteLine((Int32)listBoxSearchResults.SelectedValue);
-            Console.WriteLine(database.Recipes[(Int32)listBoxSearchResults.SelectedValue - 1].Ingredients);
+                // Debug
+                Console.WriteLine((Int32)listBoxSearchResults.SelectedValue);
+                Console.WriteLine(database.Recipes[(Int32)listBoxSearchResults.SelectedValue - 1].Ingredients);
 
-            labelRecipeTitle.Text = selectedrecipe.Name;
-            labelRecipePreperation.Text = selectedrecipe.Description;
+                // Display the recipename and the description of the recipe in the right labels
+                labelRecipeTitle.Text = selectedrecipe.Name;
+                labelRecipePreperation.Text = selectedrecipe.Description;
 
-            listBoxRequiredIngredients.DataSource = selectedrecipe.Ingredients;
-            listBoxRequiredIngredients.DisplayMember = "displayValue";
+                // Link the listbox for the ingredients to the list of ingredients of the selected ingredients
+                listBoxRequiredIngredients.DataSource = selectedrecipe.Ingredients;
+                listBoxRequiredIngredients.DisplayMember = "displayValue";
 
-            listBoxRequiredIngredients.Update();
+                // Update the listbox
+                listBoxRequiredIngredients.Update();
 
-            tabControl1.SelectedIndex = 1;
+                // Switch to the tab for the recipe
+                tabControl1.SelectedIndex = 1;
+            }
+            catch
+            {
+                MessageBox.Show("Er is iets fout gegaan bij het ophalen van het recept. Is er een recept geselecteerd?");
+            }
         }
 
         private void buttonCookRecipe_Click(object sender, EventArgs e)
         {
-            // Add the recipe to a file which tracks which recipes you have previously cooked
-            File.AppendAllText(@"C:\Users\Robin\Documents\GitHub\FoodFetish\Easy_Recipe\Easy_Recipe\cookedRecipes.txt", selectedrecipe.Name + Environment.NewLine);
+            try
+            {
+                // Add the recipe to a file which tracks which recipes you have previously cooked
+                File.AppendAllText(@"C:\Users\Robin\Documents\GitHub\FoodFetish\Easy_Recipe\Easy_Recipe\cookedRecipes.txt", selectedrecipe.Name + Environment.NewLine);
 
-            MessageBox.Show("Recept toegevoegd aan gekookte recepten");
+                MessageBox.Show("Recept toegevoegd aan gekookte recepten");
+            }
+            catch
+            {
+                MessageBox.Show("Er is iets fout gegaan bij het toevoegen aan de lijst met gekookte recepten.");
+            }
         }
     }
 }
