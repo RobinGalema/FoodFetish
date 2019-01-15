@@ -10,7 +10,7 @@ namespace Easy_Recipe
     class Database
     {
         // Connection Fields
-        const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Robin\Documents\GitHub\FoodFetish\Easy_Recipe\Easy_Recipe\DB_App.mdf;Integrated Security=True";
+        const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Robin\OneDrive\Documents\GitHub\FoodFetish\Easy_Recipe\Easy_Recipe\DB_App.mdf;Integrated Security=True";
         SqlConnection conn = new SqlConnection(connectionString);
 
         // Fields
@@ -73,7 +73,7 @@ namespace Easy_Recipe
                 string query = "Select Ing_Rec.Id, Ingredient.Naam, Recepten.Naam, Ing_Rec.aantal From ((Ing_Rec" +
                                " Inner join Ingredient on Ing_Rec.Ing_Id = Ingredient.Id)" +
                                " Inner join Recepten on Ing_Rec.Rec_Id = Recepten.Id)" +
-                               " Where Ing_Rec.Id = @RecipeID";
+                               " Where Ing_Rec.Rec_Id = @RecipeID";
 
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);

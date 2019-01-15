@@ -171,9 +171,12 @@ namespace Easy_Recipe
                 labelRecipeTitle.Text = selectedrecipe.Name;
                 labelRecipePreperation.Text = selectedrecipe.Description;
 
-                // Link the listbox for the ingredients to the list of ingredients of the selected ingredients
-                listBoxRequiredIngredients.DataSource = selectedrecipe.Ingredients;
-                listBoxRequiredIngredients.DisplayMember = "displayValue";
+                // Fill the listbox with the required ingredients
+                listBoxRequiredIngredients.Items.Clear();
+                foreach (Ingredient ingredient in database.Recipes[selectedrecipe.RecipeId - 1].Ingredients)
+                {
+                    listBoxRequiredIngredients.Items.Add(ingredient.Name + ": " + ingredient.AmountNeeded.ToString());
+                } 
 
                 // Update the listbox
                 listBoxRequiredIngredients.Update();
@@ -192,7 +195,7 @@ namespace Easy_Recipe
             try
             {
                 // Add the recipe to a file which tracks which recipes you have previously cooked
-                File.AppendAllText(@"C:\Users\Robin\Documents\GitHub\FoodFetish\Easy_Recipe\Easy_Recipe\cookedRecipes.txt", selectedrecipe.Name + Environment.NewLine);
+                File.AppendAllText(@"C:\Users\Robin\OneDrive\Documents\GitHub\FoodFetish\Easy_Recipe\Easy_Recipe\cookedRecipes.txt", selectedrecipe.Name + Environment.NewLine);
 
                 MessageBox.Show("Recept toegevoegd aan gekookte recepten");
             }
